@@ -52,7 +52,9 @@ public class EmployeeController {
 
     //Renvoie vers le formulaire d'ajout
     @GetMapping("/formsAdd")
-    public String formsAdd() {
+    public String formsAdd(Model model) {
+        Employee employee = new Employee();
+        model.addAttribute("employee", employee);
         return "formsAdd.html";
     }
 }
